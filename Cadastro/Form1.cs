@@ -34,19 +34,8 @@ namespace Cadastro
 
         private void ExibirDados()
         {
-            if (listarClientes.Count == 0)
-            {
-                var MaxId = listarClientes.Max(x => x.IdCliente);
-                cliente.IdCliente = MaxId + 1;
-                cliente.Nome = "Admin";
-                cliente.Telefone = "27 981212525";
-                listarClientes.Add(cliente);
-            }
-            else
-            {
-                listarClientes = cliente.carregarCliente( @"C:\Bd\BdCliente.json");
-                dataGridDados.DataSource = listarClientes;
-            }
+            listarClientes = Cliente.carregarCliente( @"C:\Bd\BdCliente.json");
+            dataGridDados.DataSource = listarClientes;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -69,7 +58,6 @@ namespace Cadastro
                 txtIdCliente.Text = gridViewRow.Cells[0].Value.ToString();
                 txtNome.Text = gridViewRow.Cells[1].Value.ToString();
                 txtTel.Text = gridViewRow.Cells[2].Value.ToString();
-
             }
         }
 
@@ -81,7 +69,7 @@ namespace Cadastro
 
             listarClientes[index].Nome = txtNome.Text;
             listarClientes[index].Telefone = txtTel.Text;
-            if (cliente.SalvarListClientes(listarClientes, @"C:\Bd\BdCliente.json"))
+            if (cliente.SalvarDados(listarClientes, @"C:\Bd\BdCliente.json"))
             {
                 MessageBox.Show("Dados Salvos");
             }
@@ -98,7 +86,7 @@ namespace Cadastro
 
             listarClientes[index].Nome = txtNome.Text;
             listarClientes[index].Telefone = txtTel.Text;
-            if (cliente.SalvarListClientes(listarClientes, @"C:\Bd\BdCliente.json"))
+            if (cliente.SalvarDados(listarClientes, @"C:\Bd\BdCliente.json"))
             {
                 MessageBox.Show("Dados Salvos");
             }

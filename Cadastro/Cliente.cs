@@ -28,18 +28,21 @@ namespace Cadastro
             return SalvarArquivo(strJson, path);
         }
 
-        public Cliente carregarCliente(string path)
+        public static List<Cliente> carregarCliente(string path)
         {
             var strJson = OpenFileCliente(path);
             if (strJson.Substring(0,5) != "falha")
             {
-                return JsonConvert.DeserializeObject<Cliente>(strJson);
+                return JsonConvert.DeserializeObject<List<Cliente>>(strJson);
             }
             else
             {
+                var listClientes = new List<Cliente>();
                 var cliente = new Cliente();
                 cliente.Nome = strJson;
-                return cliente;
+                listClientes.Add(cliente);
+                cliente.Nome = strJson;
+                return listClientes;
             }
         }
 
