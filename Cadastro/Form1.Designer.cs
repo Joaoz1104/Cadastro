@@ -39,8 +39,8 @@ namespace Cadastro
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnPedido = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridDados = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDados)).BeginInit();
             this.SuspendLayout();
             // 
             // labelIdCliente
@@ -112,15 +112,17 @@ namespace Cadastro
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(333, 233);
+            this.btnExcluir.Location = new System.Drawing.Point(320, 233);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 8;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnPedido
             // 
@@ -131,14 +133,15 @@ namespace Cadastro
             this.btnPedido.Text = "Fazer Pedido";
             this.btnPedido.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridDados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 288);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 150);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDados.Location = new System.Drawing.Point(12, 288);
+            this.dataGridDados.Name = "dataGridDados";
+            this.dataGridDados.RowTemplate.Height = 25;
+            this.dataGridDados.Size = new System.Drawing.Size(556, 150);
+            this.dataGridDados.TabIndex = 10;
+            this.dataGridDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Editar);
             // 
             // Form1
             // 
@@ -146,7 +149,7 @@ namespace Cadastro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(580, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridDados);
             this.Controls.Add(this.btnPedido);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -160,7 +163,7 @@ namespace Cadastro
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Cadastro de Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +181,7 @@ namespace Cadastro
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnPedido;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridDados;
     }
 }
 
