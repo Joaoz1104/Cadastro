@@ -28,7 +28,7 @@ namespace Cadastro
             return SalvarArquivo(strJson, path);
         }
 
-        public static List<Cliente> carregarCliente(string path)
+        public static List<Cliente> CarregarCliente(string path)
         {
             var strJson = OpenFileCliente(path);
             if (strJson.Substring(0,5) != "falha")

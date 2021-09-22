@@ -34,7 +34,7 @@ namespace Cadastro
 
         private void ExibirDados()
         {
-            listarClientes = Cliente.carregarCliente( @"C:\Bd\BdCliente.json");
+            listarClientes = Cliente.CarregarCliente( @"C:\Bd\BdCliente.json");
             dataGridDados.DataSource = listarClientes;
         }
 
