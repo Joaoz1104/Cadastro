@@ -31,7 +31,7 @@ namespace Cadastro
         public static List<Cliente> CarregarCliente(string path)
         {
             var strJson = OpenFileCliente(path);
-            if (strJson.Substring(0,5) != "falha")
+            if (strJson.Substring(0,5) != "Falha")
             {
                 return JsonConvert.DeserializeObject<List<Cliente>>(strJson);
             }
